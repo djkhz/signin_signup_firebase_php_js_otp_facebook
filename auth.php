@@ -27,7 +27,7 @@ try {
     // $user = $auth->getUserByEmail($_GET['phone']);
     // $data = [ 'name' => 'God', 'age' => -1 ];
     // echo json_encode(['check' => true]);
-    $response= array('check' => true);
+    $response= array('check' => 'true');
     // http_response_code(200);
     echo json_encode($response);//,JSON_UNESCAPED_UNICODE);
     // echo json_encode(array('check' => true));
