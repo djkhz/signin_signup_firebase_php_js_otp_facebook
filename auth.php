@@ -8,8 +8,8 @@ try {
     // $user = $auth->getUserByPhoneNumber('+8562055466166');
     // $user = $auth->getUserByPhoneNumber('+49-123-456789');
     echo $_GET['phone'];
-    $user = $auth->getUserByPhoneNumber($_GET['phone']);
-    // $user = $auth->getUserByPhoneNumber('+856-20-55-466-166');
+    // $user = $auth->getUserByPhoneNumber($_GET['phone']);
+    $user = $auth->getUserByPhoneNumber('+8562055466166');
     
     // $user = $auth->getUserByEmail($_GET['phone']);
     echo 'test2';
