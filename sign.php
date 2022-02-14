@@ -375,15 +375,24 @@
   // Your web app's Firebase configuration
   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
   var firebaseConfig = {
-    apiKey: "AIzaSyDRgwuDAa9B8kotsxPqGR0nb6UGMF0kVt0",
-    authDomain: "kerrili.firebaseapp.com",
-    databaseURL: "https://kerrili-default-rtdb.firebaseio.com",
-    projectId: "kerrili",
-    storageBucket: "kerrili.appspot.com",
-    messagingSenderId: "166943417273",
-    appId: "1:166943417273:web:d414e1be4af985c5f58c68",
-    measurementId: "G-RF2WX2KS33"
+    apiKey: "AIzaSyDuFBysliGA3WfKCX6w8w_MvmlSsAwFOoA",
+  authDomain: "authentication-php.firebaseapp.com",
+  projectId: "authentication-php",
+  storageBucket: "authentication-php.appspot.com",
+  messagingSenderId: "416197084692",
+  appId: "1:416197084692:web:54a8497635e04ef0d58901",
+  measurementId: "G-6RQR0ZMTQX"
   };
+  // var firebaseConfig = {
+  //   apiKey: "AIzaSyDRgwuDAa9B8kotsxPqGR0nb6UGMF0kVt0",
+  //   authDomain: "kerrili.firebaseapp.com",
+  //   databaseURL: "https://kerrili-default-rtdb.firebaseio.com",
+  //   projectId: "kerrili",
+  //   storageBucket: "kerrili.appspot.com",
+  //   messagingSenderId: "166943417273",
+  //   appId: "1:166943417273:web:d414e1be4af985c5f58c68",
+  //   measurementId: "G-RF2WX2KS33"
+  // };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
   firebase.analytics();
