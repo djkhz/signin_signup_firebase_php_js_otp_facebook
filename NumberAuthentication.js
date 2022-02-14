@@ -14,15 +14,14 @@ var email = document.getElementById("email").value;
     //phone number authentication function of firebase
     //it takes two parameter first one is number,,,second one is recaptcha
     // var admin = require("firebase-admin");
+
     $.ajax({
-        url: "/auth.php", 
-        type: "POST",
-        dataType: "json",
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({ number: number}),
-        success: function (result) {
-            // when call is sucessfull
-            if(result.check==true) {
+        url: 'auth.php',
+        method: 'post',
+        data: {number:number},
+        success:function(response){
+        //    $("#message").html(response);
+           if(response.check==true) {
             firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
                 //s is in lowercase
                 window.confirmationResult=confirmationResult;
@@ -35,11 +34,24 @@ var email = document.getElementById("email").value;
             
             // }
           }); }
-         },
-         error: function (err) {
-         // check the err for error details
-         }
-      }); // ajax call closing
+            
+        }
+    });}
+
+    // $.ajax({
+    //     url: "/auth.php", 
+    //     type: "POST",
+    //     dataType: "json",
+    //     contentType: "application/json; charset=utf-8",
+    //     data: JSON.stringify({ number: number}),
+    //     success: function (result) {
+    //         // when call is sucessfull
+            
+    //      },
+    //      error: function (err) {
+    //      // check the err for error details
+    //      }
+    //   }); // ajax call closing
 
 //     firebase.auth().getUserByPhoneNumber(number)
 //   .then(function(userRecord) {
