@@ -10,7 +10,7 @@ try {
     // $user = $auth->getUserByPhoneNumber('+49-123-456789');
     // echo $_GET['phone'];
     // $user = $auth->getUserByPhoneNumber($_GET['phone']);
-    $user = $auth->getUserByPhoneNumber('+8562055466166');
+    $user = $auth->getUserByPhoneNumber('+8562055466066');
     
     // $user = $auth->getUserByEmail($_GET['phone']);
     // $data = [ 'name' => 'God', 'age' => -1 ];
