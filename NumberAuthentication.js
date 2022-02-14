@@ -66,8 +66,6 @@ var email = document.getElementById("email").value;
    
    
     
-}
-
 function post() { 
         
        var number=document.getElementById('number').value;
