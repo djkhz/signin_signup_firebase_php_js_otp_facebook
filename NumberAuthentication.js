@@ -18,10 +18,11 @@ var email = document.getElementById("email").value;
     $.ajax({
         url: 'auth.php',
         method: 'post',
-        data: {number:number},
+        dataType: "json",
+        data: {'number':number},
         success:function(response){
         //    $("#message").html(response);
-        // var json = $.parseJSON(response); 
+        var json = $.parseJSON(response); 
            if(response.check==true) {
             firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
                 //s is in lowercase
