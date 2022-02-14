@@ -29,7 +29,7 @@ try {
     // echo json_encode(['check' => true]);
     $response= array("check" => true);
     // http_response_code(200);
-    echo json_encode($response);//,JSON_UNESCAPED_UNICODE);
+    echo $response;//,JSON_UNESCAPED_UNICODE);
     // echo json_encode(array('check' => true));
     // print json_encode($_POST);
 } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
