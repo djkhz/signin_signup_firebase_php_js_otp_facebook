@@ -178,9 +178,7 @@ class PhoneNumberMatcher implements \Iterator
         static::$leadClass = $leadClass;
 
         // Init extension patterns from PhoneNumberUtil
-        PhoneNumberUtil::initCapturingExtnDigits();
         PhoneNumberUtil::initExtnPatterns();
-
 
         // Phone number pattern allowing optional punctuation.
         static::$pattern = '(?:' . $leadClass . $punctuation . ')' . $leadLimit
@@ -422,8 +420,10 @@ class PhoneNumberMatcher implements \Iterator
             while ($groupMatcher->find() && $this->maxTries > 0) {
                 if ($isFirstMatch) {
                     // We should handle any group before this one too.
-                    $group = static::trimAfterFirstMatch(PhoneNumberUtil::$UNWANTED_END_CHAR_PATTERN,
-                        \mb_substr($candidate, 0, $groupMatcher->start()));
+                    $group = static::trimAfterFirstMatch(
+                        PhoneNumberUtil::$UNWANTED_END_CHAR_PATTERN,
+                        \mb_substr($candidate, 0, $groupMatcher->start())
+                    );
 
                     $match = $this->parseAndVerify($group, $offset);
                     if ($match !== null) {
@@ -432,8 +432,10 @@ class PhoneNumberMatcher implements \Iterator
                     $this->maxTries--;
                     $isFirstMatch = false;
                 }
-                $group = static::trimAfterFirstMatch(PhoneNumberUtil::$UNWANTED_END_CHAR_PATTERN,
-                    $groupMatcher->group(1));
+                $group = static::trimAfterFirstMatch(
+                    PhoneNumberUtil::$UNWANTED_END_CHAR_PATTERN,
+                    $groupMatcher->group(1)
+                );
                 $match = $this->parseAndVerify($group, $offset + $groupMatcher->start(1));
                 if ($match !== null) {
                     return $match;
@@ -590,8 +592,10 @@ class PhoneNumberMatcher implements \Iterator
         // We use contains and not equals, since the national significant number may be present with
         // a prefix such as a national number prefix, or the country code itself.
         if (\count($candidateGroups) == 1
-            || \mb_strpos($candidateGroups[$candidateNumberGroupIndex],
-                $util->getNationalSignificantNumber($number)) !== false
+            || \mb_strpos(
+                $candidateGroups[$candidateNumberGroupIndex],
+                $util->getNationalSignificantNumber($number)
+            ) !== false
         ) {
             return true;
         }
@@ -609,8 +613,10 @@ class PhoneNumberMatcher implements \Iterator
         // Now check the first group. There may be a national prefix at the start, so we only check
         // that the candidate group ends with the formatted number group.
         return ($candidateNumberGroupIndex >= 0
-            && \mb_substr($candidateGroups[$candidateNumberGroupIndex],
-                -\mb_strlen($formattedNumberGroups[0])) == $formattedNumberGroups[0]);
+            && \mb_substr(
+                $candidateGroups[$candidateNumberGroupIndex],
+                -\mb_strlen($formattedNumberGroups[0])
+            ) == $formattedNumberGroups[0]);
     }
 
     /**
@@ -644,8 +650,11 @@ class PhoneNumberMatcher implements \Iterator
 
         // If a format is provided, we format the NSN only, and split that according to the separator.
         $nationalSignificantNumber = $util->getNationalSignificantNumber($number);
-        return \explode('-', $util->formatNsnUsingPattern($nationalSignificantNumber, $formattingPattern,
-            PhoneNumberFormat::RFC3966));
+        return \explode('-', $util->formatNsnUsingPattern(
+            $nationalSignificantNumber,
+            $formattingPattern,
+            PhoneNumberFormat::RFC3966
+        ));
     }
 
     /**
@@ -756,8 +765,10 @@ class PhoneNumberMatcher implements \Iterator
                     if ($util->isNumberMatch($number, \mb_substr($candidate, $index)) != MatchType::NSN_MATCH) {
                         return false;
                     }
-                } elseif (!PhoneNumberUtil::normalizeDigitsOnly(\mb_substr($candidate,
-                        $index)) == $number->getExtension()
+                } elseif (!PhoneNumberUtil::normalizeDigitsOnly(\mb_substr(
+                    $candidate,
+                    $index
+                )) == $number->getExtension()
                 ) {
                     // This is the extension sign case, in which the 'x' or 'X' should always precede the
                     // extension number
@@ -792,7 +803,7 @@ class PhoneNumberMatcher implements \Iterator
         $formatRule = $util->chooseFormattingPatternForNumber($metadata->numberFormats(), $nationalNumber);
         // To do this, we check that a national prefix formatting rule was present and that it wasn't
         // just the first-group symbol ($1) with punctuation.
-        if (($formatRule !== null) && \mb_strlen($formatRule->getNationalPrefixFormattingRule()) > 0) {
+        if (($formatRule !== null) && $formatRule->getNationalPrefixFormattingRule() !== '') {
             if ($formatRule->getNationalPrefixOptionalWhenFormatting()) {
                 // The national-prefix is optional in these cases, so we don't need to check if it was
                 // present.
@@ -866,6 +877,7 @@ class PhoneNumberMatcher implements \Iterator
      * @link http://php.net/manual/en/iterator.current.php
      * @return PhoneNumberMatch|null
      */
+    #[\ReturnTypeWillChange]
     public function current()
     {
         return $this->lastMatch;
@@ -876,6 +888,7 @@ class PhoneNumberMatcher implements \Iterator
      * @link http://php.net/manual/en/iterator.next.php
      * @return void Any returned value is ignored.
      */
+    #[\ReturnTypeWillChange]
     public function next()
     {
         $this->lastMatch = $this->find($this->searchIndex);
@@ -896,6 +909,7 @@ class PhoneNumberMatcher implements \Iterator
      * @return mixed scalar on success, or null on failure.
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function key()
     {
         return $this->searchIndex;
@@ -908,6 +922,7 @@ class PhoneNumberMatcher implements \Iterator
      * Returns true on success or false on failure.
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function valid()
     {
         return $this->state === 'READY';
@@ -919,6 +934,7 @@ class PhoneNumberMatcher implements \Iterator
      * @return void Any returned value is ignored.
      * @since 5.0.0
      */
+    #[\ReturnTypeWillChange]
     public function rewind()
     {
         $this->searchIndex = 0;

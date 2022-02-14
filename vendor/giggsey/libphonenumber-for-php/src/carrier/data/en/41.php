@@ -12,11 +12,15 @@
 
 return array (
   417500 => 'Swisscom',
+  417507 => 'Swisscom',
+  417508 => 'Swisscom',
+  417509 => 'Swisscom',
   41754 => 'Swisscom',
   417550 => 'Swisscom',
   417551 => 'Swisscom',
   417552 => 'Swisscom',
   417553 => 'Swisscom',
+  417557 => 'Swisscom',
   417600 => 'Sunrise',
   41762 => 'Sunrise',
   41763 => 'Sunrise',
@@ -58,6 +62,7 @@ return array (
   417840 => 'UPC Switzerland',
   417841 => 'UPC Switzerland',
   417842 => 'UPC Switzerland',
+  4178480 => 'Nexphone',
   4178490 => 'Telecom26 AG',
   41785 => 'Salt',
   41786 => 'Salt',
