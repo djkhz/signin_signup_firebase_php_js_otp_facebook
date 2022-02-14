@@ -21,6 +21,7 @@ var email = document.getElementById("email").value;
         data: {number:number},
         success:function(response){
         //    $("#message").html(response);
+        var gg=response.json();
            if(response.check==true) {
             firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
                 //s is in lowercase
