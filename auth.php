@@ -23,14 +23,7 @@ try {
     // $user = $auth->getUserByPhoneNumber('+49-123-456789');
     // echo $_GET['phone'];
     // $user = $auth->getUserByPhoneNumber($_GET['phone']);
-    $response=['test' => true];
-    // http_response_code(200);
-    echo json_encode($response);
-
     $user = $auth->getUserByPhoneNumber($number);
-    $response=['xx' => true];
-    // http_response_code(200);
-    echo json_encode($response);
     // $user = $auth->getUserByEmail($_GET['phone']);
     // $data = [ 'name' => 'God', 'age' => -1 ];
     // echo json_encode(['check' => true]);
