@@ -9,6 +9,7 @@ try {
     echo 'test';
     $user = $auth->getUserByPhoneNumber($_GET['phone']);
     echo $user;
+    echo 'test2';
 } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
     echo $e->getMessage();
 }
