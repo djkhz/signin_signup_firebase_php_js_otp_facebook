@@ -6,6 +6,7 @@ try {
     // $user = $auth->getUser('some-uid');
     // $user = $auth->getUserByEmail('user@domain.tld');
     // $user = $auth->getUserByPhoneNumber('+8562055466166');
+    echo 'test';
     $user = $auth->getUserByPhoneNumber($_GET['phone']);
     echo $user;
 } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
