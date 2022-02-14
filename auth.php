@@ -12,6 +12,7 @@ try {
     // $user = $auth->getUserByEmail('djkhz@yahoo.com');
     echo 'test2';
 } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
+    echo 'test3';
     echo $e->getMessage();
 }
 
