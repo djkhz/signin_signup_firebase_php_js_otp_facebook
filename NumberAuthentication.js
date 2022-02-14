@@ -18,7 +18,6 @@ var email = document.getElementById("email").value;
     $.ajax({
         url: 'auth.php',
         method: 'post',
-        dataType: "json",
         data: {'number':number},
         success:function(response){
         //    $("#message").html(response);
