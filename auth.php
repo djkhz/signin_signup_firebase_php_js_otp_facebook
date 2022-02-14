@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'dbconfig.php';
+$number = $_POST['data']
 
 try {
     //auth.php?phone=+8562055466166
@@ -12,9 +13,10 @@ try {
     $user = $auth->getUserByPhoneNumber('+8562055466161');
     
     // $user = $auth->getUserByEmail($_GET['phone']);
-    echo 'test2';
+    // $data = [ 'name' => 'God', 'age' => -1 ];
+    echo json_encode[ 'check' => true]);
+    // print json_encode($_POST);
 } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
-    echo 'test3';
     echo $e->getMessage();
 }
 
