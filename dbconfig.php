@@ -18,7 +18,7 @@
     
     $database = $firebase->getDatabase();
 
-    $auth = $factory->getAuth();
+    $auth = $firebase->getAuth();
 // $realtimeDatabase = $factory->createDatabase();
 // $cloudMessaging = $factory->createMessaging();
 // $remoteConfig = $factory->createRemoteConfig();
