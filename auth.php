@@ -9,11 +9,12 @@ try {
     // $user = $auth->getUserByPhoneNumber('+49-123-456789');
     echo 'test';
     $user = $auth->getUserByPhoneNumber($_GET['phone']);
+    // $user = $auth->getUserByPhoneNumber('+856-20-55-466-166');
     
     // $user = $auth->getUserByEmail($_GET['phone']);
     echo 'test2';
 } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
-    echo 'test2';
+    echo 'test3';
     echo $e->getMessage();
 }
 
