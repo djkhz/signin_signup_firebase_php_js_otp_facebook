@@ -1,5 +1,5 @@
 <?php
-header('Content-type: application/json');
+// header('Content-type: application/json');
 session_start();
 require 'dbconfig.php';
 $number = $_POST['number'];
