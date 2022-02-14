@@ -779,7 +779,7 @@
         },
         {
             "name": "kreait/firebase-php",
-            "version": "4.17.0",
+            "version": "6.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kreait/firebase-php.git",
