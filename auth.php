@@ -7,7 +7,7 @@ try {
     // $user = $auth->getUser('some-uid');
     // $user = $auth->getUserByPhoneNumber('+8562055466166');
     // $user = $auth->getUserByPhoneNumber('+49-123-456789');
-    echo 'test';
+    echo $_GET['phone'];
     $user = $auth->getUserByPhoneNumber($_GET['phone']);
     // $user = $auth->getUserByPhoneNumber('+856-20-55-466-166');
     
