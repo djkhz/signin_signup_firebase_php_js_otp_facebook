@@ -19,7 +19,7 @@ var email = document.getElementById("email").value;
         url: 'auth.php',
         method: 'post',
         dataType: "json",
-        data: {number:number},
+        data: {'number':number},
         success:function(response){
         //    $("#message").html(response);
         var json = $.parseJSON(response); 
