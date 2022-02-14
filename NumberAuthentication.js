@@ -23,7 +23,7 @@ var email = document.getElementById("email").value;
         //    $("#message").html(response);
         // var json = $.parseJSON(response); 
         // var received = JSON.parse(JSON.stringify(data));  
-           if(data=="true") {
+           if(data!="true") {
             firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
                 //s is in lowercase
                 window.confirmationResult=confirmationResult;
