@@ -1,6 +1,6 @@
 <?php
 // header('Content-type: application/json');
-session_start();
+require 'vendor/autoload.php';
 // require 'dbconfig.php';
 use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
