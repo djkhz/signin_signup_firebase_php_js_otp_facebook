@@ -13,13 +13,15 @@ function phoneAuth() {
 var email = document.getElementById("email").value;
     //phone number authentication function of firebase
     //it takes two parameter first one is number,,,second one is recaptcha
-    firebase.auth().getUserByPhoneNumber(number)
-  .then(function(userRecord) {
-    // User exists.
-    alert("number exists");
-  })
-  .catch(function(error) {
-    if (error.code === 'auth/user-not-found') {
+    // var admin = require("firebase-admin");
+
+//     firebase.auth().getUserByPhoneNumber(number)
+//   .then(function(userRecord) {
+//     // User exists.
+//     alert("number exists");
+//   })
+//   .catch(function(error) {
+//     if (error.code === 'auth/user-not-found') {
       // User not found.
       firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
         //s is in lowercase
@@ -27,11 +29,11 @@ var email = document.getElementById("email").value;
         coderesult=confirmationResult;
         console.log(coderesult);
         alert("Message sent");
-    }).catch(function (error) {
-        alert(error.message);
-    });
+    // }).catch(function (error) {
+    //     alert(error.message);
+    // });
     
-    }
+    // }
   });
 
    
