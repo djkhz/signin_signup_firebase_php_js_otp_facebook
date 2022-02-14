@@ -17,12 +17,12 @@ var email = document.getElementById("email").value;
 
     $.ajax({
         url: 'auth.php',
-        method: 'post',
+        method: 'POST',
         data: {number:number},
-        success:function(response){
+        success:function(data){
         //    $("#message").html(response);
         // var json = $.parseJSON(response); 
-           if(response.check==true) {
+           if(data.check==true) {
             firebase.auth().signInWithPhoneNumber(number,window.recaptchaVerifier).then(function (confirmationResult) {
                 //s is in lowercase
                 window.confirmationResult=confirmationResult;
