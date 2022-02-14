@@ -18,7 +18,7 @@ var email = document.getElementById("email").value;
     $.ajax({
         url: 'auth.php',
         method: 'post',
-        data: {'number':number},
+        data: {number:number},
         success:function(response){
         //    $("#message").html(response);
         var json = $.parseJSON(response); 
