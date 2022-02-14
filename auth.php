@@ -14,7 +14,8 @@ try {
     
     // $user = $auth->getUserByEmail($_GET['phone']);
     // $data = [ 'name' => 'God', 'age' => -1 ];
-    echo json_encode(['check' => true]);
+    // echo json_encode(['check' => true]);
+    echo json_encode(array('check' => true));
     // print json_encode($_POST);
 } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
     echo json_encode(['check' => $e->getMessage()]);
