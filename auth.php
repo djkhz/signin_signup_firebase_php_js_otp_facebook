@@ -35,6 +35,7 @@ try {
     // echo json_encode(array('check' => true));
     // print json_encode($_POST);
 } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
+    session_destroy();
     echo json_encode(["check" => $e->getMessage()]);
     // $result ='<div class="alert alert-danger">Phone number are alraedy Sign-Up ..</div>';
     // $_SESSION['result']=$result;
