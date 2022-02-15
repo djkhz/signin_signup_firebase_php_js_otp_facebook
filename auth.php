@@ -29,6 +29,8 @@ try {
     // echo json_encode(['check' => true]);
     $response= true;
     // http_response_code(200);
+    $result ='<div class="alert alert-danger">Phone number are alraedy Sign-Up ..</div>';
+    $_SESSION['result']=$result;
     echo json_encode($response);//,JSON_UNESCAPED_UNICODE);
     // echo json_encode(array('check' => true));
     // print json_encode($_POST);
