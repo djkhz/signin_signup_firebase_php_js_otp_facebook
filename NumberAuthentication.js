@@ -30,13 +30,17 @@ var email = document.getElementById("email").value;
                 coderesult=confirmationResult;
                 console.log(coderesult);
                 alert("Message sent");
+                aff();
             // }).catch(function (error) {
             //     alert(error.message);
             // });
             
             // }
-            aff();
-          }); }
+          }).catch(function (error) {
+                alert(error.message);
+            });
+        
+        }
           else {
             $("#message").html('<div class="alert alert-danger">Phone number are alraedy Sign-Up ..</div>');
             window.scrollTo(0,0);
