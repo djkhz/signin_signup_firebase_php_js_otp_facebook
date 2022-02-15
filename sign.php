@@ -174,7 +174,7 @@
             <!-- Submit Button -->                   
                               
         <div class="sign-btn text-center ">
-                     <input  type="button" class="btn-get-started scrollto kbuttons" value="Register" style="height: 40px;margin-bottom: 10px;width:300px" onclick="phoneAuth(); aff();" name="submit">
+                     <input  type="button" class="btn-get-started scrollto kbuttons" value="Register" style="height: 40px;margin-bottom: 10px;width:300px" onclick="phoneAuth();" name="submit">
                                     
                                 </div>
                               
@@ -401,12 +401,12 @@
 
 
 
-<script> function aff() {
+<!-- <script> function aff() {
         var x = document.getElementById("veri");
          x.style.display = "block";
         
     }
-    </script>
+    </script> -->
     <script src="fb-login.js" type="text/javascript"></script>
   
 </body>

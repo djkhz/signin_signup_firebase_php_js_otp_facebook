@@ -35,12 +35,17 @@ var email = document.getElementById("email").value;
             // });
             
             // }
+            aff();
           }); }
             
         }
     });
 }
-
+function aff() {
+    var x = document.getElementById("veri");
+     x.style.display = "block";
+    
+}
     // $.ajax({
     //     url: "/auth.php", 
     //     type: "POST",
