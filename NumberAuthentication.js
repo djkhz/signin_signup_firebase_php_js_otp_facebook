@@ -38,7 +38,7 @@ var email = document.getElementById("email").value;
             aff();
           }); }
           else {
-            $("#message").html(data);
+            $("#message").html('<div class="alert alert-danger">Phone number are alraedy Sign-Up ..</div>');
             window.scrollTo(0,0);
           }
             
