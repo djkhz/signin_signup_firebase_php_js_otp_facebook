@@ -103,7 +103,7 @@ function codeverify() {
         var user=result.user;
         console.log(user);
         post();
-        window.location = 'http://localhost/kerrili/login.php';
+        window.location = 'http://firebase-authen.herokuapp.com/login.php';
     }).catch(function (error) {
         alert(error.message);
     });
