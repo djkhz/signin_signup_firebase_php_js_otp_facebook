@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 echo "Running composer"
-composer global require kreait/firebase-php:^5.26
+composer global require kreait/firebase-php:6.1.0
 composer install --no-dev --working-dir=/var/www/html
 conf/nginx/nginx-site.conf
 
