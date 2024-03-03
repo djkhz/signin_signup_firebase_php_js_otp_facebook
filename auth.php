@@ -16,30 +16,30 @@ $auth = $firebase->getAuth();
 
 $number = $_POST['number'];
 
-try {
-    //auth.php?phone=+8562055466166
-    // $user = $auth->getUser('some-uid');
-    // $user = $auth->getUserByPhoneNumber('+8562055466166');
-    // $user = $auth->getUserByPhoneNumber('+49-123-456789');
-    // echo $_GET['phone'];
-    // $user = $auth->getUserByPhoneNumber($_GET['phone']);
-    $user = $auth->getUserByPhoneNumber($number);
-    // $user = $auth->getUserByEmail($_GET['phone']);
-    // $data = [ 'name' => 'God', 'age' => -1 ];
-    // echo json_encode(['check' => true]);
-    $response= true;
-    // http_response_code(200);
-    $result ='<div class="alert alert-danger">Phone number are alraedy Sign-Up ..</div>';
-    $_SESSION['result']=$result;
-    echo json_encode($response);//,JSON_UNESCAPED_UNICODE);
-    // echo json_encode(array('check' => true));
-    // print json_encode($_POST);
-} catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
-    session_destroy();
-    echo json_encode(["check" => $e->getMessage()]);
-    // $result ='<div class="alert alert-danger">Phone number are alraedy Sign-Up ..</div>';
-    // $_SESSION['result']=$result;
-    // echo $result;
-}
+// try {
+//     //auth.php?phone=+8562055466166
+//     // $user = $auth->getUser('some-uid');
+//     // $user = $auth->getUserByPhoneNumber('+8562055466166');
+//     // $user = $auth->getUserByPhoneNumber('+49-123-456789');
+//     // echo $_GET['phone'];
+//     // $user = $auth->getUserByPhoneNumber($_GET['phone']);
+//     $user = $auth->getUserByPhoneNumber($number);
+//     // $user = $auth->getUserByEmail($_GET['phone']);
+//     // $data = [ 'name' => 'God', 'age' => -1 ];
+//     // echo json_encode(['check' => true]);
+//     $response= true;
+//     // http_response_code(200);
+//     $result ='<div class="alert alert-danger">Phone number are alraedy Sign-Up ..</div>';
+//     $_SESSION['result']=$result;
+//     echo json_encode($response);//,JSON_UNESCAPED_UNICODE);
+//     // echo json_encode(array('check' => true));
+//     // print json_encode($_POST);
+// } catch (\Kreait\Firebase\Exception\Auth\UserNotFound $e) {
+//     session_destroy();
+//     echo json_encode(["check" => $e->getMessage()]);
+//     // $result ='<div class="alert alert-danger">Phone number are alraedy Sign-Up ..</div>';
+//     // $_SESSION['result']=$result;
+//     // echo $result;
+// }
 
 ?>
