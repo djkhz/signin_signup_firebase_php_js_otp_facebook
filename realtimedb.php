@@ -1,6 +1,6 @@
 <?php
 
-require __DIR__.'/vendor/autoload.php';
+require '/vendor/autoload.php';
 
 // use Kreait\Firebase\Factory;
 // use Kreait\Firebase\ServiceAccount;
@@ -26,4 +26,5 @@ $newPost = $database
 
 $newPost->getChild('title')->set('Changed post title');
 $newPost->getValue(); // Fetches the data from the realtime database
-$newPost->remove();
+echo $newPost->getValue();
+// $newPost->remove();
