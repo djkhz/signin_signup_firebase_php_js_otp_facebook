@@ -11,12 +11,31 @@
 // ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/');
 // $factory = (new Factory ())->withServiceAccount(__DIR__.'/dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json');
 
-$serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/kerrili-firebase-adminsdk-h2y2z-d8a2a21d61.json');
-$firebase=(new Factory())
-        ->withServiceAccount($serviceAccount)
+// $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/kerrili-firebase-adminsdk-h2y2z-d8a2a21d61.json');
+// $firebase=(new Factory())
+//         ->withServiceAccount($serviceAccount)
+//         ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/');
+
+//         $database = $firebase->createDatabase();
+
+        $factory = (new Factory)
+        ->withServiceAccount(__DIR__.'/kerrili-firebase-adminsdk-h2y2z-d8a2a21d61.jsonn')
         ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/');
 
-        $database = $firebase->createDatabase();
+$database = $factory->createDatabase();
+
+$fetchdata = $database->getReference('New')->getValue();
+    
+    
+    
+    foreach($fetchdata as $key => $value)
+    {
+        echo $value['phone'];
+        // if ($email  == ($value['phone']) && $password == ($value['password']))
+        // {
+        //  $itemFound=true;
+        //  break;
+} 
 
 echo "test1";
 // $firebase = (new Factory())->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
