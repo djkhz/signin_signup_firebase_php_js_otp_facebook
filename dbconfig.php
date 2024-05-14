@@ -13,8 +13,10 @@
 echo "test1";
 $firebase = (new Factory())->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
 echo "test2";
-$firebase = (new Factory())->withServiceAccount('dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json');
+$test = (new Factory())->withServiceAccount(__DIR__'dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json');
 echo "test3";
+$test = (new Factory())->withServiceAccount('dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json');
+echo "test4";
 // $firebase = (new Factory())
 //     ->withServiceAccount(__DIR__.'/dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json')
 //     ->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
