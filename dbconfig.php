@@ -1,6 +1,6 @@
 <?php
     require __DIR__.'/vendor/autoload.php';
-
+    echo "test0";
     use Kreait\Firebase\Factory;
     use Kreait\Firebase\ServiceAccount;
     // use Kreait\Firebase\Auth;
@@ -10,14 +10,17 @@
 // ->withProjectId('my-project')
 // ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/');
 // $factory = (new Factory ())->withServiceAccount(__DIR__.'/dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json');
+echo "test1";
+$firebase = (new Factory())->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
+echo "test2";
+$firebase = (new Factory())->withServiceAccount('dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json');
+echo "test3";
+// $firebase = (new Factory())
+//     ->withServiceAccount(__DIR__.'/dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json')
+//     ->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
 
-
-$firebase = (new Factory())
-    ->withServiceAccount(__DIR__.'/dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json')
-    ->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
-
-// Create a Firebase Realtime Database instance
-$database = $firebase->createDatabase();
+// // Create a Firebase Realtime Database instance
+// $database = $firebase->createDatabase();
 // $factory->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app/');
 // $firebase=(new Factory())
 // ->withServiceAccount(__DIR__.'/dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json')
