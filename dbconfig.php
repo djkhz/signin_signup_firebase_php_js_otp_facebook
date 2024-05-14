@@ -2,28 +2,36 @@
     require 'vendor/autoload.php';
 
     use Kreait\Firebase\Factory;
-    use Kreait\Firebase\ServiceAccount;
-    use Kreait\Firebase\Auth;
+    // use Kreait\Firebase\ServiceAccount;
+    // use Kreait\Firebase\Auth;
     
 // $firebase = (new Factory)
 // ->withServiceAccount('authentication-php-firebase-adminsdk-vj6un-aa68f86e1c.json')
 // ->withProjectId('my-project')
 // ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/');
+$firebase=(new Factory)
+->withServiceAccount(__DIR__.'/dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json')
+->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app/');
+//->Create();
 
-   $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/test.json');
-    $firebase=(new Factory)
-        ->withServiceAccount($serviceAccount)
-        ->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app/')
-        ->Create();
-    // $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/kerrili-firebase-adminsdk-h2y2z-d8a2a21d61.json');
-    // $firebase=(new Factory)
-    //     ->withServiceAccount($serviceAccount)
-    //     ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/')
-    //     ->Create();
+// $auth = $firebase->createAuth();
+  $database = $firebase->createDatabase();
+//   ////////////////////////////////////////////////////////////////////////////////////
+//    $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/test.json');
+//     $firebase=(new Factory)
+//         ->withServiceAccount($serviceAccount)
+//         ->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app/')
+//         ->Create();
+//     // $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/kerrili-firebase-adminsdk-h2y2z-d8a2a21d61.json');
+//     // $firebase=(new Factory)
+//     //     ->withServiceAccount($serviceAccount)
+//     //     ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/')
+//     //     ->Create();
     
-    $database = $firebase->getDatabase();
+//     $database = $firebase->getDatabase();
 
-    $auth = $firebase->getAuth();
+//     $auth = $firebase->getAuth();
+//     ////////////////////////////////////////////////////////////////////////////////////
 // $realtimeDatabase = $factory->createDatabase();
 // $cloudMessaging = $factory->createMessaging();
 // $remoteConfig = $factory->createRemoteConfig();

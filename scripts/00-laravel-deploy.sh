@@ -4,7 +4,7 @@ echo "Running composer"
 # composer global require "kreait/firebase-php:^7.0" 
 composer global require kreait/firebase-php:7.10.0
 composer install --no-dev --working-dir=/var/www/html
-conf/nginx/nginx-site.conf
+# conf/nginx/nginx-site.conf
 composer update
 # #!/usr/bin/env bash
 # echo "Running composer"
@@ -24,4 +24,4 @@ composer update
 # echo "Running migrations..."
 # php artisan migrate --force
 
-# echo "done deploying"
+ echo "done deploying"
