@@ -5,7 +5,7 @@ echo "Running composer"
 composer global require kreait/firebase-php:7.10.0
 composer install --no-dev --working-dir=/var/www/html
 conf/nginx/nginx-site.conf
-
+composer update
 # #!/usr/bin/env bash
 # echo "Running composer"
 # cp /etc/secrets/.env .env
