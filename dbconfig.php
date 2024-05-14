@@ -19,7 +19,7 @@
 //         $database = $firebase->createDatabase();
 
         $factory = (new Factory)
-        ->withServiceAccount(__DIR__.'/kerrili-firebase-adminsdk-h2y2z-d8a2a21d61.jsonn')
+        ->withServiceAccount(__DIR__.'/kerrili-firebase-adminsdk-h2y2z-d8a2a21d61.json')
         ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/');
 
 $database = $factory->createDatabase();
