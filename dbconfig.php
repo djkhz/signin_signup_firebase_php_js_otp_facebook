@@ -20,7 +20,7 @@ echo "test1";
 $firebase = (new Factory())->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
 echo "test2";
 echo __DIR__;
-$test = (new Factory())->withServiceAccount(__DIR__./'authentication-php-firebase-adminsdk-vj6un-b930c1683a.json');
+$test = (new Factory())->withServiceAccount(__DIR__.'/authentication-php-firebase-adminsdk-vj6un-b930c1683a.json');
 echo "test3";
 $tesxt = (new Factory())->withServiceAccount('authentication-php-firebase-adminsdk-vj6un-b930c1683a.json');
 echo "test4";
