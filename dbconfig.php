@@ -1,4 +1,7 @@
 <?php
+
+// Start output buffering
+ob_start();
     require __DIR__.'/vendor/autoload.php';
     use Kreait\Firebase\Factory;
     use Kreait\Firebase\ServiceAccount;
@@ -35,8 +38,11 @@ $fetchdata = $database->getReference('New')->getValue();
         //  $itemFound=true;
         //  break;
 } 
-header("location:". __DIR__."/index.php");
-exit();
+header("location:index.php");
+// exit();
+
+// End output buffering and flush the buffer
+ob_end_flush();
 // $firebase = (new Factory())->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
 // echo "test2";
 // echo __DIR__;
