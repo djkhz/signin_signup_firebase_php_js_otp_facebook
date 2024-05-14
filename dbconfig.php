@@ -35,7 +35,7 @@ $fetchdata = $database->getReference('New')->getValue();
         //  $itemFound=true;
         //  break;
 } 
-header("location: index.php");
+header("location:". __DIR__./"index.php");
 exit();
 // $firebase = (new Factory())->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
 // echo "test2";
