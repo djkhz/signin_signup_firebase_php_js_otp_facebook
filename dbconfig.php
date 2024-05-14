@@ -12,13 +12,13 @@
 // $factory = (new Factory ())->withServiceAccount(__DIR__.'/dengue-fever-database-6da72-firebase-adminsdk-96c66-8cdfbb7728.json');
 
 $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/kerrili-firebase-adminsdk-h2y2z-d8a2a21d61.json');
-$firebase=(new Factory)
+$firebase=(new Factory())
         ->withServiceAccount($serviceAccount)
         ->withDatabaseUri('https://authentication-php-default-rtdb.asia-southeast1.firebasedatabase.app/');
-        
+
         $database = $firebase->createDatabase();
 
-// echo "test1";
+echo "test1";
 // $firebase = (new Factory())->withDatabaseUri('https://dengue-fever-database-6da72-default-rtdb.asia-southeast1.firebasedatabase.app');
 // echo "test2";
 // echo __DIR__;
